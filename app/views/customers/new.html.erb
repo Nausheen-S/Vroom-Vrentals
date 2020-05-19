@@ -1,0 +1,26 @@
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :address %><br>
+    <%= form.text_area :address %>
+  </p>
+
+  <p>
+    <%= form.label :lisence_number %><br>
+    <%= form.text_field :lisence_number %>
+  </p>
+
+  <p>
+    <%= form.label :lisence_expiry %><br>
+    <%= form.text_field :lisence_expiry %>
+  </p>
+
+	<p>
+	  <%= form.submit %>
+	</p>
+
+<% end %>

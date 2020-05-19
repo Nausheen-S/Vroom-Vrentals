@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   delete '/cars/:id' => 'cars#destroy'
 
 
-  root 'customers#index'
+  #root 'customers#index'
   get '/customers' => 'customers#index', as: 'customers'
   get '/customers/new' => 'customers#new', as: 'new_customer'
   post '/customers' => 'customers#create'
