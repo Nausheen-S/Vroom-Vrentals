@@ -1,4 +1,7 @@
-<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+<h1>Edit Your Profile</h1>
+
+<%= form_with scope: :customer, model: @customer, local: true do |form| %>
+
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
@@ -18,12 +21,10 @@
     <%= form.label :lisence_expiry %><br>
     <%= form.text_field :lisence_expiry %>
   </p>
-  <p class="error">
-  	<%= show_errors(@customer, :lisence_expiry) %>
-	</p>
-
-	<p>
-	  <%= form.submit %>
-	</p>
+  <p>
+    <%= form.submit %>
+  </p>
 
 <% end %>
+
+<%= link_to 'Back', root_path %>
