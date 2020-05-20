@@ -1,23 +1,20 @@
 class CarsController < ApplicationController
     before_action :authenticate_user!, :except => [ :show, :index ]
     def index
-        if user_signed_in?
-            
-            puts current_user.id
-            puts Customer.where(user_id: current_user.id).inspect
-            puts "============================="
+        if user_signed_in? 
             if Customer.where(user_id: current_user.id)
-                puts "=========================="
                 @customer = Customer.where(user_id: current_user.id)[0]
-                puts @customer.inspect
-                puts "++++++++++++++"
-                
             end
         end
         @cars = Car.all
     end
   
     def show
+        if user_signed_in? 
+            if Customer.where(user_id: current_user.id)
+                @customer = Customer.where(user_id: current_user.id)[0]
+            end
+        end
         @car = Car.find(params[:id])
         @customers = Customer.all
     end
