@@ -1,19 +1,64 @@
-<p>
-	<strong>Name:</strong>
-	<%= @customer.name %>
-</p>
 
-<p>
-	<strong>Address:</strong>
-	<%= @customer.address %>
-</p>
 
-<p>
-	<strong>Lisence Number:</strong>
-	<%= @customer.lisence_number %>
-</p>
 
-<p>
-	<strong>Lisence Expiry:</strong>
-	<%= @customer.lisence_expiry %>
-</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<div class="container">
+
+							  <div class="row">
+
+
+										<ul class="navbar-nav mr-auto">
+										<li class="nav-item">
+										<a class="nav-link" href="#">About Us</a>
+										</li>
+
+										<li class="nav-item">
+										<a class="nav-link" href="#">Bookings</a>
+										</li>
+
+										<li class="nav-item">
+										<a class="nav-link" href="#">Contact Us</a>
+										</li>
+
+										<li class="nav-item">
+										<a class="nav-link" href="#">LOGIN/SIGNUP</a>
+										</li>
+										</ul>
+
+								</div>
+
+
+									<div class="row 2">
+
+
+												<div class="col-left">
+
+													<	img src=<%= @car.image_url %> ></img>
+
+												</div>
+
+
+												<div class="col-right">
+
+
+
+
+																		<p>
+																		  <strong>Description:</strong>
+																		  <%= @car.description %>
+																		</p>
+
+
+																		<p>
+																		  <strong>Rental duration:</strong>
+																		  <%= @booking.rental_duration %>
+																		</p>
+
+																		<p>
+																		  <strong>Total Cost:</strong>
+																		  <%= @booking.total_price %>
+																		</p>
+
+
+												</div>
