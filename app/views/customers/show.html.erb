@@ -17,3 +17,11 @@
   <strong>Lisence Expiry:</strong>
   <%= @customer.lisence_expiry %>
 </p>
+
+<button>my bookings</button>
+
+<button><%= link_to 'Edit', edit_customer_path %></button>
+
+<button><%= link_to 'Destroy', customer_path,
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></button>

@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   def index
+     @customers = Customer.all
   end
 
   def show
@@ -10,29 +11,32 @@ class CustomersController < ApplicationController
   end
 
   def edit
+    @customer = Customer.find(params[:id])
   end
 
   def create
     @customer = Customer.new(customer_params)
-   #@customer.save
      # Pass in a date
-     puts '************'
-     puts customer_params[:lisence_expiry].to_date > Date.today+14.days
-     puts'***********'
-      if (customer_params[:lisence_expiry].to_date >  Date.today+14.days)
-        @customer.save
+      #if (customer_params[:lisence_expiry].to_date >  Date.today+14.days)
+      if @customer.save
         redirect_to @customer
-        #render plain:'success'
       else
-        render plain:'error'
+        render 'new'
       end
 
   end
 
   def update
+    @customer = Customer.find(params[:id])
+
+    @customer.update(customer_params)
+    redirect_to @customer
   end
 
   def destroy
+    @customer = Customer.find(params[:id])
+    @customer.destroy
+    render plain: 'successfully deleted'
   end
 
   private
