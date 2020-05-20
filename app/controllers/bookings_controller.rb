@@ -1,9 +1,6 @@
 class BookingsController < ApplicationController
   def index
 
-    <td><%= link_to 'Destroy', booking_path(booking),
-        method: :delete,
-        data: { confirm: 'Are you sure?' } %></td>
   end
 
   def show
@@ -11,6 +8,10 @@ class BookingsController < ApplicationController
   end
 
   def new
+
+    @customers = Customer.all
+    @bookings = Booking.all
+
 
   end
 
@@ -21,14 +22,18 @@ class BookingsController < ApplicationController
   end
 
   def create
+
+
     @booking = Booking.new(booking_params)
       @booking.user = customer_user
 
       if @booking.save
-            redirect_to @booking
+                @customers = Customer.all
+                @bookings = Booking.all
+                redirect_to @booking
       else
-            p @booking.errors
-            redirect_to new_booking_path
+                p @booking.errors
+                redirect_to new_booking_path
       end
 
 
@@ -45,6 +50,7 @@ class BookingsController < ApplicationController
 
       @booking = Booking.find(params[:id])
       @booking.destroy
+
 
       redirect_to root_path
   end
