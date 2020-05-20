@@ -1,24 +1,37 @@
 class CarsController < ApplicationController
-    
+    before_action :authenticate_user!, :except => [ :show, :index ]
     def index
+        if user_signed_in?
+            
+            puts current_user.id
+            puts Customer.where(user_id: current_user.id).inspect
+            puts "============================="
+            if Customer.where(user_id: current_user.id)
+                puts "=========================="
+                @customer = Customer.where(user_id: current_user.id)[0]
+                puts @customer.inspect
+                puts "++++++++++++++"
+                
+            end
+        end
         @cars = Car.all
     end
   
     def show
         @car = Car.find(params[:id])
+        @customers = Customer.all
     end
   
     def new
         @customers = Customer.all
+        @customer.user = current_user
+        
     end
   
     def edit
     end
   
     def create
-        @car = Car.new(car_params)
-        @car.save
-        redirect_to @car
     end
   
     def update
