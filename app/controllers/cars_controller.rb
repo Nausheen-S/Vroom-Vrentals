@@ -9,6 +9,7 @@ class CarsController < ApplicationController
     end
   
     def new
+        @customers = Customer.all
     end
   
     def edit

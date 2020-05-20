@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  
+
+
+
   root 'cars#index'
   get '/cars' => 'cars#index', as: 'cars'
   get '/cars/new' => 'cars#new', as: 'new_car'
@@ -30,4 +35,11 @@ Rails.application.routes.draw do
   get '/bookings/:id/edit' => 'bookings#edit', as: 'edit_booking'
   patch '/bookings/:id' => 'bookings#update'
   delete '/bookings/:id' => 'bookings#destroy'
+
+  get '/aboutus' => 'companyprofiles#index' , as: 'aboutus'
+  
+  get '/contactus' => 'ourcontacts#index' ,  as: 'contactus'
+
+  
+
 end

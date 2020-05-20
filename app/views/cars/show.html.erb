@@ -2,19 +2,19 @@
 
 <ul class="navbar-nav mr-auto">
 <li class="nav-item">
-<a class="nav-link" href="#">About Us</a>
+<a class="nav-link" href="/aboutus">About Us</a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="#">Bookings</a>
+<a class="nav-link" href="#">Profile</a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="#">Contact Us</a>
+<a class="nav-link" href="/contactus">Contact Us</a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="#">LOGIN/SIGNUP</a>
+<a class="nav-link" href="/users/sign_up">LOGIN/SIGNUP</a>
 </li>
 </ul>
 
@@ -30,7 +30,8 @@
 
 <p>
  
-  <img src=<%= @car.image_url %>
+  
+  <%= link_to image_tag(@car.image_url) %>
 </p>
 
 
