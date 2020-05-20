@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<div class = "containter">
+
+
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a class="nav-link" href="#">About Us</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">Bookings</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">Contact Us</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">LOGIN/SIGNUP</a>
+</li>
+</ul>
+
+
+
+<h1>Cars</h1>
+
+
+
+  <% @cars.each do |car| %>
+    <tr>
+      
+      <td><%= link_to image_tag(car.image_url) , car_path(car) %></td>
+      
+    </tr>
+  <% end %>
+</div>
+
+
