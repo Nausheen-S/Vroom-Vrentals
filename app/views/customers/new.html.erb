@@ -18,6 +18,9 @@
     <%= form.label :lisence_expiry %><br>
     <%= form.text_field :lisence_expiry %>
   </p>
+  <p class="error">
+  	<%= show_errors(@customer, :lisence_expiry) %>
+	</p>
 
 	<p>
 	  <%= form.submit %>

@@ -14,17 +14,12 @@ class CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(customer_params)
-   #@customer.save
      # Pass in a date
-     puts '************'
-     puts customer_params[:lisence_expiry].to_date > Date.today+14.days
-     puts'***********'
-      if (customer_params[:lisence_expiry].to_date >  Date.today+14.days)
-        @customer.save
+      #if (customer_params[:lisence_expiry].to_date >  Date.today+14.days)
+      if @customer.save
         redirect_to @customer
-        #render plain:'success'
       else
-        render plain:'error'
+        render 'new'
       end
 
   end
