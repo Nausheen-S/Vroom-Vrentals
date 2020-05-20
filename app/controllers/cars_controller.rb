@@ -3,9 +3,15 @@ class CarsController < ApplicationController
     def index
         if user_signed_in?
             
-           puts "=========================="
-            if Customer.exists?(current_user.id)
-                @customer = Customer.find(current_user.id)
+            puts current_user.id
+            puts Customer.where(user_id: current_user.id).inspect
+            puts "============================="
+            if Customer.where(user_id: current_user.id)
+                puts "=========================="
+                @customer = Customer.where(user_id: current_user.id)[0]
+                puts @customer.inspect
+                puts "++++++++++++++"
+                
             end
         end
         @cars = Car.all
