@@ -19,9 +19,7 @@
 											<a class="nav-link" href="#">Contact Us</a>
 											</li>
 
-											<li class="nav-item">
-											<a class="nav-link" href="#">LOGIN/SIGNUP</a>
-											</li>
+
 											</ul>
 
 							</div>
@@ -37,18 +35,27 @@
 														</p>
 
 														<p>
-															<%= form.label :license_number %><br>
-															<%= form.text_area :lisence_number %>
+															<%= form.label :lisence_number %><br>
+
+
+																<%= @customer.lisence_number %>
+
+
+
+
+
+
 														</p>
 
 														<p>
 															<%= form.label :lisence_expiry %><br>
-															<%= form.text_field :lisence_expiry %>
+															<%= @customer.lisence_expiry %>
+
 														</p>
 
 														<p>
 															<%= form.label :address %><br>
-															<%= form.text_field :address %>
+															<%= @customer.address %>
 														</p>
 
 														<p>
@@ -63,7 +70,6 @@
 										<div class="col-left">
 
 
-										   		<img src=<%= @car.image_url %> ></img>
 
 
 										</div>
@@ -74,6 +80,8 @@
 
 					<div class ="row 3">
 
+
+							<%= link_to 'log out', destroy_user_session_url, method: :delete %>
 
 
 

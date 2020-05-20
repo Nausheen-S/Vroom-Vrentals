@@ -8,4 +8,5 @@ class Customer < ActiveRecord::Base
     end
   end
 belongs_to :user
+has_many :booking
 end

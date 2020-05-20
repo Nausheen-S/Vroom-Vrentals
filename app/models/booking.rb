@@ -1,4 +1,5 @@
 class Booking < ActiveRecord::Base
    belongs_to :customer
-    has_one :car
+   belongs_to :user
+    belongs_to :car
 end
