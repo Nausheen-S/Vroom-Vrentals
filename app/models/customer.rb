@@ -1,4 +1,5 @@
 class Customer < ActiveRecord::Base
+
    validate :lisence_should_be_valid_for_two_weeks
 
   def lisence_should_be_valid_for_two_weeks
@@ -6,4 +7,5 @@ class Customer < ActiveRecord::Base
       errors.add(:lisence_expiry, "Lisence should be valid for more than two weeks")
     end
   end
+belongs_to :user
 end

@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  before_action :authenticate_user!
   def index
      @customers = Customer.all
   end
@@ -8,6 +9,8 @@ class CustomersController < ApplicationController
   end
 
   def new
+   @cars = Car.all
+   @bookings = Booking.all
   end
 
   def edit
@@ -18,9 +21,11 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
      # Pass in a date
       #if (customer_params[:lisence_expiry].to_date >  Date.today+14.days)
+      @customer.user = current_user
       if @customer.save
         redirect_to @customer
       else
+        #byebug
         render 'new'
       end
 
