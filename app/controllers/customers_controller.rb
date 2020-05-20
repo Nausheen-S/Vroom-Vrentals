@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   def index
+     @customers = Customer.all
   end
 
   def show
@@ -10,6 +11,7 @@ class CustomersController < ApplicationController
   end
 
   def edit
+    @customer = Customer.find(params[:id])
   end
 
   def create
@@ -25,9 +27,16 @@ class CustomersController < ApplicationController
   end
 
   def update
+    @customer = Customer.find(params[:id])
+
+    @customer.update(customer_params)
+    redirect_to @customer
   end
 
   def destroy
+    @customer = Customer.find(params[:id])
+    @customer.destroy
+    render plain: 'successfully deleted'
   end
 
   private
