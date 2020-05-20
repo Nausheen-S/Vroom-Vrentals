@@ -11,9 +11,11 @@ class BookingsController < ApplicationController
 
     @customers = Customer.all
     @bookings = Booking.all
+    @cars = Car.all
+    @users= User.all
+    @customer = Customer.find(current_user.id)
 
-
-  end
+   end
 
   def edit
 
@@ -25,7 +27,7 @@ class BookingsController < ApplicationController
 
 
     @booking = Booking.new(booking_params)
-      @booking.user = customer_user
+
 
       if @booking.save
                 @customers = Customer.all
