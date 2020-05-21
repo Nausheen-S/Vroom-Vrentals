@@ -7,6 +7,7 @@ class CarsController < ApplicationController
             end
         end
         @cars = Car.all
+        puts "========"
     end
   
     def show

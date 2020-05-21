@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   delete '/cars/:id' => 'cars#destroy'
 
 
-  #root 'customers#index'
   get '/customers' => 'customers#index', as: 'customers'
   get '/customers/new' => 'customers#new', as: 'new_customer'
   post '/customers' => 'customers#create'
@@ -30,8 +29,7 @@ Rails.application.routes.draw do
 
 
   get '/bookings' => 'bookings#index', as: 'bookings'
-  # get '/bookings/new' => 'bookings#new', as: 'new_booking'
-  post '/cars/:id/bookings' => 'bookings#create'
+   post '/cars/:id/bookings' => 'bookings#create'
   get '/bookings/:id' => 'bookings#show' , as: 'booking'
   get '/bookings/:id/edit' => 'bookings#edit', as: 'edit_booking'
   patch '/bookings/:id' => 'bookings#update'
