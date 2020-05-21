@@ -15,6 +15,19 @@ class BookingsController < ApplicationController
     @car = Car.find(params[:id])
     @users= User.all
     @customer = Customer.find(current_user.id)
+    @date = (Date.today-(Date.today-10))
+
+    # puts "=============="
+    #  puts "=============="
+    #   puts "=============="
+    #   puts (Date.today)
+    #    puts (Date.today - 10)
+    #   puts (Date.today - (Date.today - 10))
+    #   puts (@date * 5).to_i
+
+    #   puts "=============="
+    #  puts "=============="
+    #   puts "=============="
 
 
    end
@@ -36,17 +49,44 @@ class BookingsController < ApplicationController
     # puts "==================="
      @customer = Customer.find(current_user.id)
      @booking.customer= @customer
-    puts "==================="
-    puts "==================="
-     puts params[:id]
-     puts "==================="
-    puts "==================="
-      @car= Car.find(params[:id])
+     @car= Car.find(params[:id])
       @booking.car = @car
+      puts "=============="
+     puts "=============="
+      puts "=============="
+      puts @booking.checkout_date
+      puts (@booking.checkout_date-(Date.today)).to_i
+      puts @car.price_per_hour
+      puts "=============="
+     puts "=============="
+      puts "=============="
+      @rate = (@car.price_per_hour)
+      @duration = (@booking.checkout_date-(Date.today)).to_i
+      @total = @rate * @duration
+      puts "=============="
+      puts "=============="
+      puts @total
+      puts "=============="
+      puts "=============="
+      @booking.total_price = @total
+      puts "=============="
+      puts "=============="
+      puts @car.available
+      puts "=============="
+      puts "=============="
+
 
 
       if @booking.save
+                # @car.available = false
+                @car.update(available: false)
+                puts "=============="
+                puts "=============="
+                puts @car.available
+                puts "=============="
+                puts "=============="
                 redirect_to @booking
+
       else
                 p @booking.errors
                 render 'new'
