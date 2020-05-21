@@ -4,6 +4,10 @@
 
 <ul class="navbar-nav mr-auto">
 <li class="nav-item">
+<a class="nav-link" href="/cars">Home</a>
+</li>
+
+<li class="nav-item">
 <a class="nav-link" href="/aboutus">About Us</a>
 </li>
 
@@ -11,7 +15,11 @@
 <% if user_signed_in? %>
 <% if @customer  %>
 <%= link_to 'View My Profile', "/customers/" + @customer.id.to_s %>
+
+<li class="nav-item">
+</br>
 <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+</li>
 </br>
 
 <% else %>
@@ -25,9 +33,11 @@
 <a class="nav-link" href="/contactus">Contact Us</a>
 </li>
 
+<% if not user_signed_in? %>
 <li class="nav-item">
 <a class="nav-link" href="/users/sign_up">LOGIN/SIGNUP</a>
 </li>
+<% end %>
 </ul>
 
 
