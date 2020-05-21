@@ -12,8 +12,10 @@ class BookingsController < ApplicationController
     @customers = Customer.all
     @bookings = Booking.all
     @cars = Car.all
+    @car = Car.find(params[:id])
     @users= User.all
     @customer = Customer.find(current_user.id)
+
 
    end
 
@@ -27,15 +29,27 @@ class BookingsController < ApplicationController
 
 
     @booking = Booking.new(booking_params)
+    # puts "==================="
+    # puts "==================="
+    # puts booking_params
+    # puts "==================="
+    # puts "==================="
+     @customer = Customer.find(current_user.id)
+     @booking.customer= @customer
+    puts "==================="
+    puts "==================="
+     puts params[:id]
+     puts "==================="
+    puts "==================="
+      @car= Car.find(params[:id])
+      @booking.car = @car
 
 
       if @booking.save
-                @customers = Customer.all
-                @bookings = Booking.all
                 redirect_to @booking
       else
                 p @booking.errors
-                redirect_to new_booking_path
+                render 'new'
       end
 
 
@@ -59,6 +73,6 @@ class BookingsController < ApplicationController
 
   private
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :total_price, :lisence_expiry)
+    params.require(:booking).permit(:checkout_date)
   end
 end

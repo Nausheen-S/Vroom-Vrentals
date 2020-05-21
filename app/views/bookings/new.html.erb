@@ -28,11 +28,18 @@
 
 									<div class="col-right">
 
-													<%= form_with scope: :booking, url: bookings_path, local: true do |form| %>
+													<%= form_with scope: :booking, url: "/cars/" + @car.id.to_s + "/bookings", local: true do |form| %>
 														<p>
-															<%= form.label :Rental_duration %><br>
-															<%= form.text_field :Rental_duration %>
+															<%= form.label :checkout_date %><br>
+															<%= form.text_field :checkout_date %>
+
+
 														</p>
+
+														<p class="error">
+					  									<%= show_errors(@booking, :checkout_date) %>
+														</p>
+
 
 														<p>
 															<%= form.label :lisence_number %><br>
