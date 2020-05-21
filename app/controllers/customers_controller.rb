@@ -20,6 +20,7 @@ def index
   end
 
   def create
+    
     @customer = Customer.new(customer_params)
      # Pass in a date
       #if (customer_params[:lisence_expiry].to_date >  Date.today+14.days)
