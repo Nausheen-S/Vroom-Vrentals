@@ -13,3 +13,14 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+//= require jquery3
+
+var doSort = function(){
+  <% @bookings.each do |booking| %>
+  <li><%= booking.customer %></li>
+<% end %>
+};
+
+window.onload = function(){
+  $('#submit').click(doSort);
+};

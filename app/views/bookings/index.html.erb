@@ -1,0 +1,5 @@
+<h3>Bookings Till Date:</h3>
+<% @bookings.each do |booking| %>
+  <li>
+  <%=  image_tag(booking.car.image_url) %></li>
+<% end %>

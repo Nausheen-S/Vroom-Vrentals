@@ -39,6 +39,6 @@ Rails.application.routes.draw do
 
   get '/contactus' => 'ourcontacts#index' ,  as: 'contactus'
 
-
+get '/customers/:customer_id/bookings' => 'bookings#index', as: 'bookings_customers'
 
 end
