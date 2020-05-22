@@ -18,10 +18,15 @@
   <%= @customer.lisence_expiry %>
 </p>
 
-<button>my bookings</button>
+<%= button_to "My Booking", bookings_customers_path(@customer), method: :get %>
 
 <button><%= link_to 'Edit', edit_customer_path %></button>
+<button><%= link_to 'Home', root_path %></button>
 
 <button><%= link_to 'Destroy', customer_path,
         method: :delete,
         data: { confirm: 'Are you sure?' } %></button>
+
+<p class="error">
+  	<%= show_errors(@customer, :error) %>
+	</p>
