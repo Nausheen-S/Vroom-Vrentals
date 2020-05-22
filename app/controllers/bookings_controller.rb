@@ -107,7 +107,8 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking = Booking.find(params[:id])
+    @customer = Customer.find(current_user.id)
+    @booking = Booking.find(current_user.id)
     @booking.update_attribute(:returned, true)
     @booking.car.update_attribute(:available,true)
 
