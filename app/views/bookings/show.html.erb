@@ -8,19 +8,28 @@
 							  <div class="row">
 
 
-										<ul class="navbar-nav mr-auto">
+
+									 <ul class="navbar-nav mr-auto">
+
 										<li class="nav-item">
-										<a class="nav-link" href="#">About Us</a>
+										<a class="nav-link" href="/cars">Home</a>
 										</li>
 
 										<li class="nav-item">
-										<a class="nav-link" href="#">Bookings</a>
+										<a class="nav-link" href="/aboutus">About Us</a>
 										</li>
 
-										<li class="nav-item">
-										<a class="nav-link" href="#">Contact Us</a>
+											<li class="nav-item">
+											<a class="nav-link" href="#">Bookings</a>
+											</li>
 
-										</ul>
+
+											<li class="nav-item">
+										<a class="nav-link" href="/contactus">Contact Us</a>
+										</li>
+
+
+											</ul>
 
 								</div>
 
@@ -39,18 +48,46 @@
 
 
 
+							<p>
+  								<%= link_to image_tag(@car.image_url) %>
+								</p>
 
 
-																		<p>
-																		  <strong>Return Date:</strong>
-																		  <%= @booking.checkout_date %>
-																		</p>
 
-																		<p>
-																		  <strong>Total Cost:</strong>
-																		  <%= @booking.total_price %>
 
-																		</p>
+							<p>
+
+									<%= @car.description %>
+
+						</p>
+
+						<p>
+							 <strong>Return Date:</strong>
+										 <%= @booking.checkout_date %>
+						</p>
+
+						<p>
+							 <strong>Total Cost:</strong>
+										<%= @booking.total_price %>
+
+						</p>
+
+
+
+
+<%= form_with scope: :booking, model: @booking, local: true  do |form| %>
+
+ <p>Are you sure you want to return the car? </p>
+
+  <p>
+  	<%= submit_tag "Return My Car" %>
+
+  </p>
+
+
+<% end %>
+
+
 
 
 												</div>
