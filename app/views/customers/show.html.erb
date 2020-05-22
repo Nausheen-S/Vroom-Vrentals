@@ -18,7 +18,9 @@
   <%= @customer.lisence_expiry %>
 </p>
 
-<%= button_to "My Booking", bookings_customers_path(@customer), method: :get %>
+<%= button_to "My Booking History", bookings_customers_path(@customer), method: :get %>
+
+
 
 <button><%= link_to 'Edit', edit_customer_path %></button>
 <button><%= link_to 'Home', root_path %></button>
