@@ -26,3 +26,34 @@
 <div class="logo">
 <%= image_tag 'project3-logo.png' %>
 </div>
+
+<!--
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
+
+<body class="customerbookingbody">
+	<div class="container">
+		<h3 class="customerbookingheading">Bookings Till Date</h3>
+			<div class="customerbookingtext">
+				<% @bookings.each do |booking| %>
+			 		<% if !booking.returned %>
+		  			<li class="customerbookinglist">
+		  				<%=  image_tag(booking.car.image_url) %>
+		  			</li>
+						<li class="customerbookinglist">
+		  				<button class="btn btn-dark"><%= link_to 'Show Details', booking_path(booking) , class:"buttontext" %></button>
+						</li>
+					<% end %>
+				<% end %>
+			</div>
+	</div>
+</body>
+<div class="footer-copyright text-center py-3">
+	© 2020 Copyright:
+<a href="https://mdbootstrap.com/"> VroomVrentals</a>
+<div class="logo">
+<%= image_tag 'project3-logo.png' %>
+</div>
+</div>
+-->
