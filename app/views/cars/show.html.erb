@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
 
 <ul class="navbar-nav mr-auto">
 <li class="nav-item">
@@ -41,39 +42,43 @@
 <% end  %>
 </ul>
 
-<p>
+
+<body class="carshowbody">
+	<div class="jumbotron">
+	<!--<div class="carshowtext">-->
+		 <p class="carshowtext">
+  		<%= link_to image_tag(@car.image_url)%>
+		</p>
+
+<p class="carshowtext">
   <strong>Description:</strong>
   <%= @car.description %>
 </p>
 
-<p>
+<p class="carshowtext">
   <strong>Price/hour:</strong>
   <%= @car.price_per_hour %>
 </p>
 
-<p>
-  <%= link_to image_tag(@car.image_url) %>
-</p>
-
-
-
 <% if user_signed_in? %>
 <% if @car.available %>
-<%= button_to "Rent Now", new_booking_path, method: :get %>
+<div class ="carshowbutton">
+<%= button_to "Rent Now", new_booking_path, method: :get, class: "btn btn-dark" %>
 <% else %>
 <h3>Car is currently unavailable </h3>
 <%end %>
+
 <% else %>
 <%= button_to "Sign Up / Login to Book" , new_user_session_path , method: :get %>
 <% end %>
+</div>
+</div>
+</body>
 
-
-
-
-
-<p>Companies Policies faagadgdshdshhdgadgaddgsfaagadgdshdshhdgadgaddgfaagadgdshdshhdgadgaddgsfaagadgdshdshhdgadgaddgsfaagadgdshdshhdgadgaddg============sfaagadgdshdshhdgadgaddg============sfaagadgdshdshhdgadgaddg
-</p>
-
-<div class="footer-copyright text-center py-3">© 2020 Copyright:
+<div class="footer-copyright text-center py-3">
+	© 2020 Copyright:
 <a href="https://mdbootstrap.com/"> VroomVrentals</a>
+<div class="logo">
+<%= image_tag 'project3-logo.png' %>
+</div>
 </div>

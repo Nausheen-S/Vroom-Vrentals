@@ -1,8 +1,9 @@
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
 
 
-  <div class="container">
+
 
 						  <div class="row">
 
@@ -29,31 +30,22 @@
 											</ul>
 
 							</div>
-
-					<div class="row 2">
-
-									<div class="col-right">
+							<%= link_to 'log out', destroy_user_session_url, method: :delete %>
 
 
 
 
-															<p>
-  											<%= link_to image_tag(@car.image_url) %>
+<body class="bookingnewbody">
+	<div class="container">
+
+															<p class="showcarimage">
+  											<%=  image_tag(@car.image_url) %>
 													</p>
-
-
-
-
-														<p>
-
-															<%= @car.description %>
-
-														</p>
-
+													<div class = "bookingformtext">
 
 													<%= form_with scope: :booking, url: "/cars/" + @car.id.to_s + "/bookings", local: true do |form| %>
-														<p>
-															<%= form.label :checkout_date %><br>
+														<p ><strong>
+															<%= form.label :checkout_date %></strong><br>
 															<%= form.text_field :checkout_date %>
 
 
@@ -64,64 +56,49 @@
 														</p>
 
 
-														<p>
-															<%= form.label :lisence_number %><br>
+														<p><strong>
+															<%= form.label :lisence_number %></strong><br>
 
 
 																<%= @customer.lisence_number %>
 
-
-
-
-
-
 														</p>
 
-														<p>
-															<%= form.label :lisence_expiry %><br>
+														<p><strong>
+															<%= form.label :lisence_expiry %></strong><br>
 															<%= @customer.lisence_expiry %>
 
 														</p>
 
-														<p>
-															<%= form.label :address %><br>
+														<p><strong>
+															<%= form.label :address %></strong><br>
 															<%= @customer.address %>
 														</p>
 
 														<p>
-															<%= form.submit %>
+															<%= form.submit class: "btn btn-dark"%>
 														</p>
 
 													<% end %>
-
-										</div>
-
-
-										<div class="col-left">
+												</div>
 
 
 
 
-										</div>
-
-					</div>
 
 
 
-					<div class ="row 3">
-
-
-							<%= link_to 'log out', destroy_user_session_url, method: :delete %>
 
 
 
-									<div class="footer-copyright text-center py-3">© 2020 Copyright:
-								<a href="https://mdbootstrap.com/"> VroomVrentals</a>
-								</div>
 
+</div>
+</body>
 
-					</div>
-
-
-
-	</div>
+<div class="footer-copyright text-center py-3">
+	© 2020 Copyright:
+<a href="https://mdbootstrap.com/"> VroomVrentals</a>
+<div class="logo">
+<%= image_tag 'project3-logo.png' %>
+</div>
+</div>

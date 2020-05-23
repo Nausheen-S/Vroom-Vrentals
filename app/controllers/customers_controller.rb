@@ -59,7 +59,7 @@ def index
       @customer.destroy
       @user = User.find(current_user.id)
       @user.destroy
-      render plain: 'successfully deleted'
+      redirect_to root_path
     else
       @customer = Customer.find(params[:id])
       @customer.errors.add(:error, 'cars should be returned before deleting account')
