@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
 
   get '/bookings' => 'bookings#index', as: 'bookings'
-   post '/cars/:id/bookings' => 'bookings#create'
+  post '/cars/:id/bookings' => 'bookings#create'
   get '/bookings/:id' => 'bookings#show' , as: 'booking'
   get '/bookings/:id/edit' => 'bookings#edit', as: 'edit_booking'
   patch '/bookings/:id' => 'bookings#update'
@@ -39,6 +39,6 @@ Rails.application.routes.draw do
 
   get '/contactus' => 'ourcontacts#index' ,  as: 'contactus'
 
-
+  
 
 end
