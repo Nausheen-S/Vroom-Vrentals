@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(customer_id: params[:customer_id] )
      @customers = Customer.all
 
+
   end
 
   def show
