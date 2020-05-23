@@ -1,64 +1,86 @@
-.aboutbody{
-	background-color: #ffd11a;
+.aboutbody {
+  background-color: #ffd11a;
 }
-.aboutheading{
-	padding-top: 40px;
-	text-align: center;
-	font-family: 'Oswald', sans-serif;
-	font-weight: bolder;
-
+.aboutheading {
+  padding-top: 40px;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: bolder;
 }
-.abouttext{
-	padding-top: 40px;
-	justify-content: justify;
-	font-family: 'Oswald', sans-serif;
+.abouttext {
+  padding-top: 40px;
+  justify-content: justify;
+  font-family: "Oswald", sans-serif;
 }
-.aboutdiv{
-	font-family: 'Oswald', sans-serif;
-	font-size: 20px;
-	color: black;
+.aboutdiv {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  color: black;
 }
-.aboutpolicy{
-	justify-content: justify;
-	font-family: 'Oswald', sans-serif;
+.aboutpolicy {
+  justify-content: justify;
+  font-family: "Oswald", sans-serif;
 }
-.aboutsubheading{
-	padding-top: 80px;
-	padding-bottom: 40px;
-	text-align: center;
-	font-family: 'Oswald', sans-serif;
-	font-weight: bolder;
+.aboutsubheading {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: bolder;
 }
 
 //contact us
-.contactheading{
-	padding-top: 40px;
-	text-align: center;
-	font-family: 'Oswald', sans-serif;
-	font-weight: bolder;
-	padding-bottom: 40px;
-
+.contactheading {
+  padding-top: 40px;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: bolder;
+  padding-bottom: 40px;
 }
-.contactbody{
-	background-color: #ffd11a;
+.contactbody {
+  background-color: #ffd11a;
 }
-.contacttext{
-	text-align: center;
-	justify-content: justify;
-	font-family: 'Oswald', sans-serif;
-	list-style: none;
+.contacttext {
+  text-align: center;
+  justify-content: justify;
+  font-family: "Oswald", sans-serif;
+  list-style: none;
 }
-.contactspan{
-	font-weight: bolder;
+.contactspan {
+  font-weight: bolder;
 }
 
 //customershow
-.customerbody{
-	background-color: #ffd11a;
+.customerbody {
+  background-color: #ffd11a;
 }
-.customertext{
-	font-family: 'Oswald', sans-serif;
-	font-size: 20px;
-	display: flex;
-	justify-content: center;
+.customertext {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.customerprofilebutton {
+  display: flex;
+  justify-content: center;
+}
+
+.profilesubbutton {
+  padding-top: 30px;
+}
+
+.buttontext {
+  color: white;
+  background-color: #333333;
+}
+
+.historybutton {
+  padding-left: 22px;
+}
+
+//customerbookingpage
+
+.customerbookingbody {
+  background-color: #ffd11a;
 }
