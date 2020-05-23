@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
     @cars = Car.all
     @car = Car.find(params[:id])
     @users= User.all
-    @customer = Customer.find(current_user.id)
+    @customer = Customer.find(current_user.customer.id)
     @date = (Date.today-(Date.today-10))
 
     # puts "=============="
@@ -58,7 +58,7 @@ class BookingsController < ApplicationController
     # puts booking_params
     # puts "==================="
     # puts "==================="
-     @customer = Customer.find(current_user.id)
+     @customer = Customer.find(current_user.customer.id)
      @booking.customer= @customer
      @car= Car.find(params[:id])
       @booking.car = @car
@@ -108,17 +108,15 @@ class BookingsController < ApplicationController
 
   def update
 
-    #@booking = Booking.find(params[:id])
-   # @booking.update_attribute(:returned, true)
-    #@booking.car.update_attribute(:available,true)
-
-    #@booking.save
-    #redirect_to root_path
-    @customer = Customer.find(current_user.id)
-    @booking = Booking.find(current_user.id)
+ @booking = Booking.find(params[:id])
     @booking.update_attribute(:returned, true)
     @booking.car.update_attribute(:available,true)
+
     @booking.save
+
+    # @booking.returned = true
+    # @booking.car.available = true
+
     redirect_to root_path
 
 

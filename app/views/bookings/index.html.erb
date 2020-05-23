@@ -5,17 +5,18 @@
 <h3 class="customerbookingheading">Bookings Till Date</h3>
 <div class="customerbookingtext">
 <% @bookings.each do |booking| %>
+
+	 <% if !booking.returned%>
   <li class="customerbookinglist">
   	<%=  image_tag(booking.car.image_url) %>
   </li>
 	<li class="customerbookinglist">
-		<%= form_with scope: :booking, model: @booking, local: true  do |form| %>
 
- 		<!--<p>Are you sure you want to return the car? </p>-->
-  	<p class="returnbutton">
-  		<%= submit_tag "Return Car" , :class => "btn btn-dark" %>
-  	</p>
+
+  	<button class="btn btn-dark"><%= link_to 'Show Details', booking_path(booking) , class:"buttontext" %></button>
+
 	</li>
+
 <% end %>
 <% end %>
 </div>
