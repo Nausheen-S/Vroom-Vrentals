@@ -33,12 +33,15 @@ Rails.application.routes.draw do
   get '/bookings/:id' => 'bookings#show' , as: 'booking'
   get '/bookings/:id/edit' => 'bookings#edit', as: 'edit_booking'
   patch '/bookings/:id' => 'bookings#update'
-  delete '/bookings/:id' => 'bookings#destroy'
+  delete '/bookings/:id' => 'bookings#destroy', as: 'return_booking'
+
+
 
   get '/aboutus' => 'companyprofiles#index' , as: 'aboutus'
 
   get '/contactus' => 'ourcontacts#index' ,  as: 'contactus'
 
-  
+get '/customers/:customer_id/bookings' => 'bookings#index', as: 'bookings_customers'
+post '/customers/:customer_id/bookings' => 'bookings#update'
 
 end

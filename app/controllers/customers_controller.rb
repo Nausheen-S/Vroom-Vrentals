@@ -4,6 +4,13 @@ class CustomersController < ApplicationController
 def index
 
      @customers = Customer.all
+     if params.has_key?(:customer_id)
+    # get all the bookings for a specific customer
+    @bookings = Booking.where(customer_id: params[:customer_id] )
+  else
+    # get all bookings
+    @bookings = Booking.all
+  end
   end
 
   def show
@@ -20,7 +27,7 @@ def index
   end
 
   def create
-    
+
     @customer = Customer.new(customer_params)
      # Pass in a date
       #if (customer_params[:lisence_expiry].to_date >  Date.today+14.days)
@@ -42,10 +49,25 @@ def index
   end
 
   def destroy
-    @customer = Customer.find(params[:id])
-    @customer.destroy
-    render plain: 'successfully deleted'
+    @bookings = Booking.where(customer_id: current_user.id)
+    puts"============"
+    puts @bookings.length
+
+    puts"============"
+   if  @bookings.length == 0
+      @customer = Customer.find(params[:id])
+      @customer.destroy
+      @user = User.find(current_user.id)
+      @user.destroy
+      render plain: 'successfully deleted'
+    else
+      @customer = Customer.find(params[:id])
+      @customer.errors.add(:error, 'cars should be returned before deleting account')
+      render 'show'
+    end
   end
+
+
 
   private
   def customer_params

@@ -1,27 +1,49 @@
-<p>
-  <strong>Name:</strong>
-  <%= @customer.name %>
-</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
+<body class="customerbody">
+	<div class = "container">
+	<div class=" jumbotron customerbody" >
+		<p class="customertext">
+		  <strong>Name:</strong>
+		  <%= @customer.name %>
+		</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @customer.address %>
-</p>
+		<p class="customertext">
+		  <strong>Address:</strong>
+		  <%= @customer.address %>
+		</p>
 
-<p>
-  <strong>Lisence Number:</strong>
-  <%= @customer.lisence_number %>
-</p>
+		<p class="customertext">
+		  <strong>Lisence Number:</strong>
+		  <%= @customer.lisence_number %>
+		</p>
 
-<p>
-  <strong>Lisence Expiry:</strong>
-  <%= @customer.lisence_expiry %>
-</p>
+		<p class="customertext">
+		  <strong>Lisence Expiry:</strong>
+		  <%= @customer.lisence_expiry %>
+		</p>
 
-<button>my bookings</button>
+		<br/>
+		<%= button_to "My Booking History", bookings_customers_path(@customer), method: :get %>
 
-<button><%= link_to 'Edit', edit_customer_path %></button>
 
-<button><%= link_to 'Destroy', customer_path,
-        method: :delete,
-        data: { confirm: 'Are you sure?' } %></button>
+
+		<button><%= link_to 'Edit', edit_customer_path %></button>
+		<button><%= link_to 'Home', root_path %></button>
+
+		<button><%= link_to 'Destroy', customer_path,
+		        method: :delete,
+		        data: { confirm: 'Are you sure?' } %></button>
+
+		<p class="error">
+		  	<%= show_errors(@customer, :error) %>
+			</p>
+	</div>
+	</div>
+</body>
+<div class="footer-copyright text-center py-3">© 2020 Copyright:
+<a href="https://mdbootstrap.com/"> VroomVrentals</a>
+<div class="logo">
+<%= image_tag 'project3-logo.png' %>
+</div>
+</div>

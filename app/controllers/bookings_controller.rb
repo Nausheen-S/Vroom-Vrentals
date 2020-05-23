@@ -1,10 +1,21 @@
 class BookingsController < ApplicationController
   def index
+    @bookings = Booking.where(customer_id: params[:customer_id] )
+     @customers = Customer.all
 
   end
 
   def show
     @booking = Booking.find(params[:id])
+    @car = @booking.car
+
+
+
+    puts "================"
+    puts "================"
+    puts @car
+    puts "================"
+    puts "================"
   end
 
   def new
@@ -96,23 +107,70 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking = Booking.find(params[:id])
+    @customer = Customer.find(current_user.id)
+    @booking = Booking.find(current_user.id)
+    @booking.update_attribute(:returned, true)
+    @booking.car.update_attribute(:available,true)
 
-    @booking.update(booking_params)
-    redirect_to @booking
+    @booking.save
+    # @booking.returned = true
+    # @booking.car.available = true
+
+    redirect_to root_path
+
+
   end
 
   def destroy
-
       @booking = Booking.find(params[:id])
+      @car = Car.find(params[:id])
+
+      # puts "================="
+      # puts "================="
+      # puts @booking.car_id
+      # puts "================="
+      # puts "================="
+
+       @car= @booking.car_id
+
+
       @booking.destroy
+
+
 
 
       redirect_to root_path
   end
 
+
+  # def return_car
+  #     puts "++++++++++++++++++++++++++"
+  #     @booking = Booking.find(params[:id])
+  #     puts "================="
+  #     puts "12345"
+  #     puts @bookings
+  #     puts "67890"
+  #     puts "================="
+
+  #     @car = @booking.car.available
+
+  #     @car.to_s.update(available: true)
+
+  #     (@booking.returned).to_s.update(returned:true)
+
+  #     redirect_to root_path
+
+  # end
+
+
   private
   def booking_params
-    params.require(:booking).permit(:checkout_date)
+    params.require(:booking).permit(:checkout_date,:total_price)
+
   end
+
+  def return_car_params
+    params.require(:booking).permit(:returned)
+  end
+
 end

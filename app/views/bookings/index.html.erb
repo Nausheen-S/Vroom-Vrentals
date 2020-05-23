@@ -1,0 +1,19 @@
+<h3>Bookings Till Date:</h3>
+<% @bookings.each do |booking| %>
+  <li>
+  <%=  image_tag(booking.car.image_url) %></li>
+
+
+
+<li>
+<%= form_with scope: :booking, model: @booking, local: true  do |form| %>
+
+ <p>Are you sure you want to return the car? </p>
+  <p>
+  	<%= submit_tag "Return My Car" %>
+  </p>
+</li>
+
+
+<% end %>
+<% end %>
