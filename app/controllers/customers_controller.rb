@@ -49,22 +49,34 @@ def index
   end
 
   def destroy
-    @bookings = Booking.where(customer_id: current_user.id)
+  @customer = Customer.find(params[:id])
+
+      if @customer.bookings.where(returned: false).any?
+       @customer.errors.add(:error, 'cars should be returned before deleting account')
+          render 'show'
+    else
+         @customer.destroy
+          @user = User.find(current_user.id)
+          @user.destroy
+         redirect_to root_path
+    end
+
+    #@bookings = Booking.where(customer_id: current_user.id, returned: false)
     puts"============"
-    puts @bookings.length
+    #puts @bookings.length
 
     puts"============"
-   if  @bookings.length == 0
-      @customer = Customer.find(params[:id])
-      @customer.destroy
-      @user = User.find(current_user.id)
-      @user.destroy
-      redirect_to root_path
-    else
-      @customer = Customer.find(params[:id])
-      @customer.errors.add(:error, 'cars should be returned before deleting account')
-      render 'show'
-    end
+   #if  @bookings.length == 0
+      #@customer = Customer.find(params[:id])
+      #@customer.destroy
+      #@user = User.find(current_user.id)
+      #@user.destroy
+      #redirect_to root_path
+    #else
+     # @customer = Customer.find(params[:id])
+     # @customer.errors.add(:error, 'cars should be returned before deleting account')
+      #render 'show'
+    #end
   end
 
 

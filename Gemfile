@@ -60,3 +60,4 @@ gem 'devise'
 gem 'jquery-rails'
 
 gem 'bootstrap', '~> 4.1.0'
+gem 'database_cleaner'

@@ -108,18 +108,18 @@ class BookingsController < ApplicationController
 
   def update
 
-    #@booking = Booking.find(params[:id])
-   # @booking.update_attribute(:returned, true)
-    #@booking.car.update_attribute(:available,true)
-
-    #@booking.save
-    #redirect_to root_path
-    @customer = Customer.find(current_user.id)
-    @booking = Booking.find(current_user.id)
+    @booking = Booking.find(params[:id])
     @booking.update_attribute(:returned, true)
     @booking.car.update_attribute(:available,true)
+
     @booking.save
     redirect_to root_path
+    #@customer = Customer.find(current_user.id)
+    #@booking = Booking.find(current_user.id)
+    #@booking.update_attribute(:returned, true)
+    #@booking.car.update_attribute(:available,true)
+    #@booking.save
+    #redirect_to root_path
 
 
   end
