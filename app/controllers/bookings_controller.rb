@@ -8,16 +8,7 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     @car = @booking.car
-
-
-
-    puts "================"
-    puts "================"
-    puts @car
-    puts "================"
-    puts "================"
   end
-
   def new
 
     @customers = Customer.all
@@ -27,21 +18,7 @@ class BookingsController < ApplicationController
     @users= User.all
     @customer = Customer.find(current_user.id)
     @date = (Date.today-(Date.today-10))
-
-    # puts "=============="
-    #  puts "=============="
-    #   puts "=============="
-    #   puts (Date.today)
-    #    puts (Date.today - 10)
-    #   puts (Date.today - (Date.today - 10))
-    #   puts (@date * 5).to_i
-
-    #   puts "=============="
-    #  puts "=============="
-    #   puts "=============="
-
-
-   end
+  end
 
   def edit
 
@@ -53,39 +30,26 @@ class BookingsController < ApplicationController
 
 
     @booking = Booking.new(booking_params)
-    # puts "==================="
-    # puts "==================="
-    # puts booking_params
-    # puts "==================="
-    # puts "==================="
+  
      @customer = Customer.find(current_user.id)
      @booking.customer= @customer
      @car= Car.find(params[:id])
       @booking.car = @car
-      puts "=============="
-     puts "=============="
-      puts "=============="
+ 
       puts @booking.checkout_date
       puts (@booking.checkout_date-(Date.today)).to_i
       puts @car.price_per_hour
-      puts "=============="
-     puts "=============="
-      puts "=============="
+   
       @rate = (@car.price_per_hour)
       @duration = (@booking.checkout_date-(Date.today)).to_i
       @total = @rate * @duration
-      puts "=============="
-      puts "=============="
+  
       puts @total
-      puts "=============="
-      puts "=============="
+  
       @booking.total_price = @total
-      puts "=============="
-      puts "=============="
+     
       puts @car.available
-      puts "=============="
-      puts "=============="
-
+   
 
 
       if @booking.save

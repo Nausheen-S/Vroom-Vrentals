@@ -1,104 +1,35 @@
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
-
-
-
-
-						  <div class="row">
-
-									 <ul class="navbar-nav mr-auto">
-
-										<li class="nav-item">
-										<a class="nav-link" href="/cars">Home</a>
-										</li>
-
-										<li class="nav-item">
-										<a class="nav-link" href="/aboutus">About Us</a>
-										</li>
-
-											<li class="nav-item">
-											<a class="nav-link" href="#">Bookings</a>
-											</li>
-
-
-											<li class="nav-item">
-										<a class="nav-link" href="/contactus">Contact Us</a>
-										</li>
-
-
-											</ul>
-
-							</div>
-							<%= link_to 'log out', destroy_user_session_url, method: :delete %>
-
-
-
-
 <body class="bookingnewbody">
 	<div class="container">
+		<p class="showcarimage">
+  			<%=  image_tag(@car.image_url) %>
+		</p>
+		<div class = "bookingformtext">
+			<%= form_with scope: :booking, url: "/cars/" + @car.id.to_s + "/bookings", local: true do |form| %>
+				<p ><strong>
+					<%= form.label :checkout_date %></strong><br>
+						<%= form.text_field :checkout_date %>
+				</p>
+				<p class="error">
+					<%= show_errors(@booking, :checkout_date) %>
+				</p>
+				<p><strong>
+					<%= form.label :lisence_number %></strong><br>
+						<%= @customer.lisence_number %>
+				</p>
+				<p><strong>
+					<%= form.label :lisence_expiry %></strong><br>
+						<%= @customer.lisence_expiry %>
+				</p>
+				<p><strong>
+					<%= form.label :address %></strong><br>
+						<%= @customer.address %>
+				</p>
+				<p>
+					<%= form.submit class: "btn btn-dark"%>
+				</p>
 
-															<p class="showcarimage">
-  											<%=  image_tag(@car.image_url) %>
-													</p>
-													<div class = "bookingformtext">
-
-													<%= form_with scope: :booking, url: "/cars/" + @car.id.to_s + "/bookings", local: true do |form| %>
-														<p ><strong>
-															<%= form.label :checkout_date %></strong><br>
-															<%= form.text_field :checkout_date %>
-
-
-														</p>
-
-														<p class="error">
-					  									<%= show_errors(@booking, :checkout_date) %>
-														</p>
-
-
-														<p><strong>
-															<%= form.label :lisence_number %></strong><br>
-
-
-																<%= @customer.lisence_number %>
-
-														</p>
-
-														<p><strong>
-															<%= form.label :lisence_expiry %></strong><br>
-															<%= @customer.lisence_expiry %>
-
-														</p>
-
-														<p><strong>
-															<%= form.label :address %></strong><br>
-															<%= @customer.address %>
-														</p>
-
-														<p>
-															<%= form.submit class: "btn btn-dark"%>
-														</p>
-
-													<% end %>
-												</div>
-
-
-
-
-
-
-
-
-
-
-
-</div>
+			<% end %>
+		</div>
+	</div>
 </body>
 
-<div class="footer-copyright text-center py-3">
-	© 2020 Copyright:
-<a href="https://mdbootstrap.com/"> VroomVrentals</a>
-<div class="logo">
-<%= image_tag 'project3-logo.png' %>
-</div>
-</div>

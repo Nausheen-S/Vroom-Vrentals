@@ -80,24 +80,24 @@
 .customerbookingbody {
   background-color: #ffd11a;
 }
-.customerbookingheading{
-	padding-top: 40px;
+.customerbookingheading {
+  padding-top: 40px;
   text-align: center;
   font-family: "Oswald", sans-serif;
   font-weight: bolder;
   padding-bottom: 40px;
 }
-.customerbookinglist{
-	list-style: none;
+.customerbookinglist {
+  list-style: none;
 }
-.customerbookingtext{
-	display: flex;
-	align-items: center;
-	flex-direction: column;
+.customerbookingtext {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-.returnbutton{
-	padding-top: 20px;
-	padding-left: 40px;
+.returnbutton {
+  padding-top: 20px;
+  padding-left: 40px;
 }
 
 //customereditpage
@@ -105,53 +105,59 @@
 .customereditbody {
   background-color: #ffd11a;
 }
-.customereditheading{
-	padding-top: 40px;
+.customereditheading {
+  padding-top: 40px;
   text-align: center;
   font-family: "Oswald", sans-serif;
   font-weight: bolder;
   padding-bottom: 40px;
 }
-.customereditform{
-	display: flex;
-	justify-content: center;
+.customereditform {
+  display: flex;
+  justify-content: center;
 }
-.backbutton{
-	display: flex;
-	justify-content: center;
-	padding-right: 20px;
+.backbutton {
+  display: flex;
+  justify-content: center;
+  padding-right: 20px;
 }
 
 //carshowpage
 
-.carshowbody{
-	background-color: #ffd11a;
+.carshowbody {
+  background-color: #ffd11a;
 }
-.carshowtext{
-	font-family: "Oswald", sans-serif;
+.carshowtext {
+  font-family: "Oswald", sans-serif;
   font-size: 20px;
   display: flex;
   justify-content: center;
 }
-.carshowbutton{
-	display: flex;
-	float: right;
+.carshowbutton {
+  display: flex;
+  float: right;
 }
 
 //newbookingpage
 
-.bookingnewbody{
-	background-color: #ffd11a;
+.bookingnewbody {
+  background-color: #ffd11a;
 }
-.bookingformtext{
-	font-family: "Oswald", sans-serif;
+.bookingformtext {
+  font-family: "Oswald", sans-serif;
   font-size: 20px;
   display: flex;
   justify-content: center;
 }
-.showcarimage{
-	display: flex;
-	justify-content: center;
+.showcarimage {
+  display: flex;
+  justify-content: center;
+}
+.customerbookingtext {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 //customernewpage
@@ -159,26 +165,24 @@
 .customernewbody {
   background-color: #ffd11a;
 }
-.customernewheading{
-	padding-top: 40px;
+.customernewheading {
+  padding-top: 40px;
   text-align: center;
   font-family: "Oswald", sans-serif;
   font-weight: bolder;
   padding-bottom: 40px;
 }
-.customernewform{
-	display: flex;
-	justify-content: center;
+.customernewform {
+  display: flex;
+  justify-content: center;
 }
 
 //carsindexpage
 .carindexbody {
   background-color: #ffd11a;
 }
-.carindextext{
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-
-
+.carindextext {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }

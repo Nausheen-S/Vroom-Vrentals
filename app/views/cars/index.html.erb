@@ -1,41 +1,5 @@
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
- </link>
- <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
 
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-
-     	<li class="active"><a href="/aboutus">About Us</a></li>
-
-      <li><a href="/contactus">Contact Us</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-    	<li>
-    		<% if user_signed_in? %>
-					<% if @customer  %>
-						<%= link_to 'View My Profile', "/customers/" + @customer.id.to_s %>
-			</li>
-			<li>
-				<%= link_to 'log out', destroy_user_session_url, method: :delete %>
-			</li>
-					<% else %>
-						<li>
-							<%= link_to 'Add My Profile', "/customers/new" %>
-						</li>
-						<li>
-							<%= link_to 'log out', destroy_user_session_url, method: :delete %>
-						</li>
-					<% end %>
-				<% end %>
-      <% if not user_signed_in? %>
-      	<li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up/Log In</a></li>
-      <% end %>
-    </ul>
-  </div>
-</nav>
-<body class ="carindexbody">
+ <body class ="carindexbody">
 <div class = "container">
 	<div class="carindextext">
 
@@ -51,55 +15,10 @@
   </div>
 	</div>
 </div>
-<!--<img src="<%= image_url 'https://i.imgur.com/zWm4oHz.png[/img]' %>"/>-->
+
 </body>
-<div class="footer-copyright text-center py-3">© 2020 Copyright:
-<a href="https://mdbootstrap.com/"> VroomVrentals</a>
-<div class="logo">
-<%= image_tag 'project3-logo.png' %>
-</div>
-</div>
-
-
-<!---
-<ul class="navbar-nav mr-auto">
-<li class="nav-item">
-<a class="nav-link" href="/cars">Home</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="/aboutus">About Us</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="/contactus">Contact Us</a>
-</li>
-
-<li class="nav-item">
-<% if user_signed_in? %>
-<% if @customer  %>
-<%= link_to 'View My Profile', "/customers/" + @customer.id.to_s %>
-
-<li class="nav-item">
-</br>
-<%= link_to 'log out', destroy_user_session_url, method: :delete %>
-</li>
-</br>
-
-<% else %>
-<%= link_to 'Add My Profile', "/customers/new" %>
-<%= link_to 'log out', destroy_user_session_url, method: :delete %>
-<% end %>
-<% end %>
-</li>
 
 
 
-<% if not user_signed_in? %>
-<li class="nav-item">
-<a class="nav-link" href="/users/sign_up">LOGIN/SIGNUP</a>
-</li>
-<% end %>
-</ul>
 
--->
+
