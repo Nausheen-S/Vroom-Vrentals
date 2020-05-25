@@ -2,7 +2,7 @@
   background-color: #ffd11a;
 }
 .aboutheading {
-  padding-top: 40px;
+  padding-top: 80px;
   text-align: center;
   font-family: "Oswald", sans-serif;
   font-weight: bolder;
@@ -31,7 +31,7 @@
 
 //contact us
 .contactheading {
-  padding-top: 40px;
+  padding-top: 80px;
   text-align: center;
   font-family: "Oswald", sans-serif;
   font-weight: bolder;
@@ -185,4 +185,57 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+}
+
+.loginpage {
+  background-color: #ffd11a;
+}
+.loginpagetext {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.loginpageheading {
+  padding-top: 40px;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: bolder;
+  padding-bottom: 40px;
+}
+
+.signupbutton {
+  padding-left: 50px;
+}
+
+.links {
+  padding-right: 75px;
+}
+
+.signupsession {
+  padding-left: 50px;
+  padding-right: 20px;
+}
+
+.signuppage {
+  background-color: #ffd11a;
+}
+.signuppagetext {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.signuppageheading {
+  padding-top: 40px;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: bolder;
+  padding-bottom: 40px;
+}
+
+.signupbutton {
+  padding-left: 50px;
 }
