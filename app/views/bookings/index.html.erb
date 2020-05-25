@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
 <body class="customerbookingbody">
 <div class="container">
@@ -11,7 +11,7 @@
 	<li class="customerbookinglist">
 		<%= form_with scope: :booking, model: @booking, local: true  do |form| %>
 
- 		<!--<p>Are you sure you want to return the car? </p>-->
+ 		<p>Are you sure you want to return the car? </p>
   	<p class="returnbutton">
   		<%= submit_tag "Return Car" , :class => "btn btn-dark" %>
   	</p>
@@ -25,9 +25,9 @@
 <a href="https://mdbootstrap.com/"> VroomVrentals</a>
 <div class="logo">
 <%= image_tag 'project3-logo.png' %>
-</div>
+</div>-->
 
-<!--
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
@@ -44,6 +44,12 @@
 						<li class="customerbookinglist">
 		  				<button class="btn btn-dark"><%= link_to 'Show Details', booking_path(booking) , class:"buttontext" %></button>
 						</li>
+						<!--<%= form_with scope: :booking, model: booking, local: true  do |form| %>
+ <p>Are you sure you want to return the car? </p>
+  <p>
+  	<%= submit_tag "Return My Car" %>
+  </p>
+<% end %>-->
 					<% end %>
 				<% end %>
 			</div>
@@ -56,4 +62,3 @@
 <%= image_tag 'project3-logo.png' %>
 </div>
 </div>
--->

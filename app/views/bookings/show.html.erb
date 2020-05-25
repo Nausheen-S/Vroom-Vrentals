@@ -36,6 +36,7 @@
 							 <strong>Total Cost:</strong>
 										<%= @booking.total_price %>
 						</p>
+
 <%= form_with scope: :booking, model: @booking, local: true  do |form| %>
  <p>Are you sure you want to return the car? </p>
   <p>
@@ -53,3 +54,10 @@
 																		</p>
 												</div>
 												</body>
+											</div>
+												<div class="footer-copyright text-center py-3">© 2020 Copyright:
+<a href="https://mdbootstrap.com/"> VroomVrentals</a>
+<div class="logo">
+<%= image_tag 'project3-logo.png' %>
+</div>
+</div>
