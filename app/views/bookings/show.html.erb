@@ -1,63 +1,31 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
 <body class="customerbookingbody">
-<div class="container">
-							  <div class="row">
-									 <ul class="navbar-nav mr-auto">
-										<li class="nav-item">
-										<a class="nav-link" href="/cars">Home</a>
-										</li>
-										<li class="nav-item">
-										<a class="nav-link" href="/aboutus">About Us</a>
-										</li>
-											<li class="nav-item">
-											<a class="nav-link" href="#">Bookings</a>
-											</li>
-											<li class="nav-item">
-										<a class="nav-link" href="/contactus">Contact Us</a>
-										</li>
-											</ul>
-								</div>
-									<div class="row 2">
-												<div class="col-left">
-												</div>
-												<div class="col-right">
-							<p>
-  								<%=  image_tag(@car.image_url) %>
-								</p>
-							<p>
-									<%= @car.description %>
-						</p>
-						<p>
-							 <strong>Return Date:</strong>
-										 <%= @booking.checkout_date %>
-						</p>
-						<p>
-							 <strong>Total Cost:</strong>
-										<%= @booking.total_price %>
-						</p>
-
-<%= form_with scope: :booking, model: @booking, local: true  do |form| %>
- <p>Are you sure you want to return the car? </p>
-  <p>
-  	<%= submit_tag "Return My Car" %>
-  </p>
-<% end %>
-																		<p>
-																		  <strong>Car ID:</strong>
-																		  <%= @booking.car_id %>
-																		</p>
-
-																		<p>
-																		  <strong>Name:</strong>
-																		  <%= @booking.customer.name %>
-																		</p>
-												</div>
-												</body>
-											</div>
-												<div class="footer-copyright text-center py-3">© 2020 Copyright:
-<a href="https://mdbootstrap.com/"> VroomVrentals</a>
-<div class="logo">
-<%= image_tag 'project3-logo.png' %>
-</div>
-</div>
+	<div class="container">	 
+		<div class="customerbookingtext"> 
+		<p>
+  			<%=  image_tag(@car.image_url) %>
+		</p>
+		<p>
+			<strong>Car Details:</strong>
+			<%= @car.description %>
+		</p>
+		<p>
+			<strong>Return Date:</strong>
+			<%= @booking.checkout_date %>
+		</p>
+		<p>
+			<strong>Total Cost:</strong>
+		 	<%= @booking.total_price %>
+		</p>
+		<p>
+			<strong>Name:</strong>
+			<%= @booking.customer.name %>
+		</p>
+		<%= form_with scope: :booking, model: @booking, local: true  do |form| %>			
+			<p>
+				<%= submit_tag "Return Car" , class: "btn btn-dark" %>
+			 </p>
+		<% end %>
+		</div>
+	</div>
+</body>
+											
