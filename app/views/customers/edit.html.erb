@@ -17,12 +17,12 @@
 
   <p>
     <strong><%= form.label :lisence_number %><br></strong>
-    <%= form.text_field :lisence_number %>
+    <%= form.number_field :lisence_number %>
   </p>
 
   <p>
     <strong><%= form.label :lisence_expiry %><br></strong>
-    <%= form.text_field :lisence_expiry %>
+    <%= form.date_field :lisence_expiry %>
   </p>
   <p>
     <%= form.submit class: "btn btn-dark"%>
